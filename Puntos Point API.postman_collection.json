@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "65b78abf-e28c-42a0-b95e-54807c1a1c89",
+		"name": "Puntos Point API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "161827",
+		"_collection_link": "https://grey-comet-92855.postman.co/workspace/My-Workspace~b7becd74-9098-434d-8640-65a0aa83fb63/collection/161827-65b78abf-e28c-42a0-b95e-54807c1a1c89?action=share&source=collection_link&creator=161827"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin1@pp.com\",\n    \"password\": \"123456\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Products Most Purchased",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/products/most_purchased",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"most_purchased"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:3000/api/v1/products/most_purchased \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Products Top Revenue",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/products/top_revenue",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"top_revenue"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:3000/api/v1/products/top_revenue \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Purchases Filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/purchases/filter?from_date=2025-05-01&to_date=2025-05-20&category_id=1&client_id=1&admin_user_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"purchases",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "from_date",
+							"value": "2025-05-01"
+						},
+						{
+							"key": "to_date",
+							"value": "2025-05-20"
+						},
+						{
+							"key": "category_id",
+							"value": "1"
+						},
+						{
+							"key": "client_id",
+							"value": "1"
+						},
+						{
+							"key": "admin_user_id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://localhost:3000/api/v1/purchases/filter?from_date=2024-01-01&to_date=2025-01-01&category_id=1&client_id=1&admin_user_id=1\" \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Purchases Granularity",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/purchases/granularity?from_date=2024-05-01&to_date=2025-05-20&granularity=day",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"purchases",
+						"granularity"
+					],
+					"query": [
+						{
+							"key": "from_date",
+							"value": "2024-05-01"
+						},
+						{
+							"key": "to_date",
+							"value": "2025-05-20"
+						},
+						{
+							"key": "granularity",
+							"value": "day"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://localhost:3000/api/v1/purchases/granularity?from_date=2024-01-01&to_date=2025-01-01&granularity=day\" \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Purchase",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"purchase\": {\n      \"client_id\": 1,\n      \"product_id\": 1\n    }\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/purchases",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"purchases"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:3000/api/v1/purchases \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"purchase\": {\n      \"client_id\": 1,\n      \"product_id\": 1\n    }\n  }'\n"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NDc3NDk0NzV9.p0Nm2Eg2_a7QwiW7A-YNcfVQ9nthRxomBh9g-WJTUJw",
+			"type": "string"
+		}
+	]
+}
