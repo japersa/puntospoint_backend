@@ -11,6 +11,7 @@ module PuntospointBackend
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
+    # Set Sidekiq as the Active Job queue adapter and prefix queue names with the environment
     config.active_job.queue_adapter = :sidekiq
     config.active_job.queue_name_prefix = Rails.env
 
